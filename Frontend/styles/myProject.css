@@ -1,0 +1,293 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #76abfa;
+    margin: 0;
+    padding: 1px;
+    display: flex;
+    flex-direction: column; /* Change to column to stack containers vertically */
+    height: 100vh;
+}
+
+/* Main container to handle vertical alignment */
+.main-container {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    gap: 20px;
+}
+
+/* Container for project, members, and tasks */
+.project-members-tasks-container {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 495px;
+    width: 2000px;
+    gap: 90px;
+    overflow-y: hidden;
+}
+
+/* General card styles for the new container */
+.additional-container {
+    height: 495px;
+    width: 2000px;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    gap: 30px; /* Space between cards */
+}
+
+/* Styles for additional cards */
+.additional-card {
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100px;
+    height: 100px; /* Adjust height as needed */
+}
+
+.project-container, .members-container, .add-member-container, .task-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    width: 400px;
+}
+
+.project-card, .members-card, .add-member-card, .add-task-card  {
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 400px;
+}
+
+
+/* Heading styles */
+.project-card h2, .members-card h2, .add-member-card h2 ,.add-task-card h2{
+    margin-top: 0;
+    font-size: 24px;
+}
+
+/* Form group styles */
+.form-group {
+    padding: 0px 10px;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Submit button styles */
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Back Button styles */
+/* Back Button styles */
+.back-button {
+    position: sticky;
+    top: 10px;
+    left: 10px;
+    background-color: transparent; /* Blue theme */
+    border: none;
+    border-radius: 50%;
+    color: rgb(0, 0, 0);
+    font-size: 20px; /* Icon size */
+    width: 40px; /* Button size */
+    height: 40px; /* Button size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+.back-button:hover {
+    color: white;
+    background-color: black; /* Darker blue on hover */
+}
+
+/* Members Card Styles */
+.members-card {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.members-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.owner-info {
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.members-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.member-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc; /* Bottom border for styling */
+}
+
+.delete-member-button {
+    background: none;
+    border: none;
+    color: #dc3545;
+    cursor: pointer;
+}
+
+.delete-member-button:hover {
+    color: #c82333;
+}
+
+
+.profile-pic {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.role-form-group{
+    margin-top: 70px;
+}
+.role-form-group label,
+.select-form-group label{
+    margin-top: 20px;
+    display: block;
+    font-weight: bold;
+    font-size: large;
+    margin-bottom: 5px;
+}
+
+.role-form-group label{
+    margin-top: 30px;
+}
+
+.role-form-group input[type="text"]{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.select-form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.select2-container .select2-selection--single {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    height: 32px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.select2-container .select2-selection--single .select2-selection__rendered {
+    padding: 0px; /* Adjust padding inside the selection box */
+    font-size: 24px; /* Adjust font size as needed */
+}
+
+.tasks-container, .done-tasks-container {
+    padding: 20px;
+    width: 100%;    
+    display: flex;
+    justify-content: center; /* Center horizontally */
+}
+
+.tasks-card, .done-task-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 20px;
+    overflow-y: scroll;
+}
+
+/* Tasks Header */
+.tasks-header-container, .done-tasks-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Search Bar */
+.search-bar, .done-search-bar {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Task Counter */
+.task-counter, .done-task-counter {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.task-counter label, .done-task-counter label {
+    margin-right: 10px;
+}
+
+/* Task Table */
+#tasksTable, #done-tasksTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#tasksTable th, #tasksTable td, #done-tasksTable th, #done-tasksTable td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+#tasksTable th, #done-tasksTable th {
+    background-color: #f4f4f4;
+}

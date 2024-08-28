@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Project</title>
+    <link rel="stylesheet" href="../styles/myProject.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.7/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@4.0.0/build/cjs/index.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script src="../scripts/utils.js"></script>
+</head>
+
+<body>
+    <button id="backButton" class="back-button">
+        <i class="fas fa-arrow-left"></i>
+    </button>
+
+    <div class="main-container">
+        <!-- Existing Divs -->
+        <div class="project-members-tasks-container">
+            <div class="project-container">
+                <div class="project-card">
+                    <h2>Edit Project</h2>
+                    <form id="projectForm">
+                        <div class="form-group">
+                            <label for="projectName">Project Name:</label>
+                            <input type="text" id="projectName" name="projectName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="projectDescription">Project Description:</label>
+                            <textarea id="projectDescription" name="projectDescription" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" style="
+                        margin-top: 115px;
+                    ">Update Project</button>
+                    </form>
+                </div>
+            </div>
+            <div class="members-container">
+                <div class="members-card">
+                    <div class="members-header">
+                        <h2>Members(<span id="memberCount">0</span>)</h2>
+                    </div>
+                    <div class="owner-info">
+                        <strong>Owner:</strong> <span id="ownerName">Loading...</span>
+                    </div>
+                    <div id="membersList" class="members-list">
+                        <!-- Members will be dynamically populated here -->
+                    </div>
+                </div>
+            </div>
+            <div class="add-member-container">
+                <div class="add-member-card">
+                    <h2>Add Member</h2>
+                    <form id="addMemberForm">
+                        <div class="select-form-group">
+                            <label for="userSelect">User:</label>
+                            <select id="userSelect"></select>
+                        </div>
+                        <div class="role-form-group">
+                            <label for="role">Role:</label>
+                            <input type="text" id="role" name="role" required>
+                        </div>
+                        <button class="add-memberb" type="submit" style="
+                        margin-top: 122px;
+                    ">Add Member</button>
+                    </form>
+                </div>
+            </div>
+            <!-- New Div for Add Task and Task List -->
+            <div class="task-container">
+                <div class="add-task-card">
+                    <h2>Add Task</h2>
+                    <form id="taskForm">
+                        <div class="form-group">
+                            <label for="taskTitle">Title:</label>
+                            <input type="text" id="taskTitle" name="taskTitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="taskDescription">Description:</label>
+                            <textarea id="taskDescription" name="taskDescription" rows="4" required></textarea>
+                        </div>
+                        <div class="select-form-group">
+                            <label for="taskUser">Assign to:</label>
+                            <select id="taskUser"></select>
+                        </div>
+                        <div class="form-group">
+                            <label for="dueDate">Due Date:</label>
+                            <input type="date" id="dueDate" name="dueDate" required>
+                        </div>
+                        <button type="submit">Add Task</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Div below existing content -->
+        <div class="additional-container">
+            <div class="tasks-container">
+                <div class="tasks-card">
+                    <div class="tasks-header-container">
+                        <h2>Tasks</h2>
+                        <input type="text" id="searchTasks" placeholder="Search by member name" class="search-bar">
+                    </div>
+                    <div class="task-counter">
+                        <label for="taskRange" id="taskLabel">0</label>
+                        <input type="range" id="taskRange" min="0" max="1000" value="0" disabled>
+                        <label for="taskRange" id="taskCounter">Tasks 0</label>
+                    </div>
+                    <table id="tasksTable">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Member</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                                <th>Due Date</th>
+                                <th>Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Task rows will be dynamically inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="tasks-container">
+                <div class="done-task-card">
+                    <div class="done-tasks-header-container">
+                        <h2>Tasks History</h2>
+                        <input type="text" id="done-searchTasks" placeholder="Search by task name" class="search-bar">
+                    </div>
+                    <div class="done-task-counter">
+                        <label for="done-taskRange" id="done-taskLabel">0</label>
+                        <input type="range" id="done-taskRange" min="0" max="1000" value="0" disabled>
+                        <label for="done-taskRange" id="done-taskCounter">Tasks 0</label>
+                    </div>
+                    <table id="done-tasksTable">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Member</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                                <th>Due Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Done task rows will be dynamically inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../scripts/myProject.js"></script>
+</body>
+
+</html>

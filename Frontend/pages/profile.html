@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="../styles/profile.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.7/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@4.0.0/build/cjs/index.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../scripts/utils.js"></script>
+</head>
+<body>
+    <div class="profile-container">
+        <button title="Logout" class="logout-button" onclick="logout()">
+            <i class="fa-solid fa-sign-out-alt"></i> <!-- Font Awesome logout icon -->
+        </button>
+        <div class="profile-card">
+            <div class="profile-photo-container">
+                <img id="profilePhoto" alt="Profile Photo">
+            </div>
+            <form id="profileForm" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password"><br>
+                    <input type="checkbox" id="showPassword"> Show Password
+                </div>
+                <div class="form-group">
+                    <label for="profilePicture">Profile Picture:</label>
+                    <input type="file" id="profilePicture" name="profilePicture" accept="image/*">
+                </div>
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+    <div class="work-and-projects-container">
+        <div class="projects-container">
+            <div class="projects-card">
+                <h2>My Projects</h2>
+                <button id="addProjectBtn" class="add-project-btn">
+                    <i class="fas fa-plus"></i> <!-- Font Awesome Plus Icon -->
+                </button>
+                <p id="noProjectsMessage" class="no-projects-message">You Don't Own Any Project</p>
+                <ul id="projectsList">
+                    <!-- Project items will be dynamically inserted here -->
+                </ul>
+            </div>
+        </div>
+        <div class="projects-container">
+            <div class="projects-card">
+                <h2>Work</h2>
+                <p id="noWorkMessage" class="no-projects-message">You're not a member of any projects</p>
+                <ul id="workList"></ul>
+            </div>
+        </div>
+    </div>
+    <button title="Logout" class="logout-button" onclick="logout()">
+        <i class="fa-solid fa-sign-out-alt"></i> <!-- Font Awesome logout icon -->
+    </button>
+    <div class="tasks-container">
+        <div class="tasks-card">
+            <div class="tasks-header-container">
+                <h2>Tasks</h2>
+                <input type="text" id="searchTasks" placeholder="Search by project name" class="search-bar">
+            </div>
+            <div class="task-counter">
+                <label for="taskRange">0</label>
+                <input type="range" id="taskRange" min="0" max="10" value="0" disabled>
+                <label for="taskRange" id="taskCounter">Tasks</label>
+            </div>
+            <table id="tasksTable">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Project</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                        <th>Due Date</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Task rows will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="../scripts/profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Project</title>
+    <link rel="stylesheet" href="../styles/viewProject.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.7/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@4.0.0/build/cjs/index.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../scripts/utils.js"></script>
+</head>
+
+<body>
+    <button id="backButton" class="back-button">
+        <i class="fas fa-arrow-left"></i>
+    </button>
+
+    <div class="main-container">
+        <!-- Existing Divs -->
+        <div class="project-members-tasks-container">
+            <div class="project-container">
+                <div class="project-card">
+                    <h2>Edit Project</h2>
+                    <form id="projectForm">
+                        <div class="form-group">
+                            <label for="projectName">Project Name:</label>
+                            <input type="text" id="projectName" name="projectName" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="projectDescription">Project Description:</label>
+                            <textarea id="projectDescription" name="projectDescription" rows="5" required></textarea>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="members-container">
+                <div class="members-card">
+                    <div class="members-header">
+                        <h2>Members(<span id="memberCount">0</span>)</h2>
+                    </div>
+                    <div class="owner-info">
+                        <strong>Owner:</strong> <span id="ownerName">Loading...</span>
+                    </div>
+                    <div id="membersList" class="members-list">
+                        <!-- Members will be dynamically populated here -->
+                    </div>
+                </div>
+            </div>
+        <!-- New Div below existing content -->
+        <div class="additional-container">
+            <div class="tasks-container">
+                <div class="tasks-card">
+                    <div class="tasks-header-container">
+                        <h2>Tasks</h2>
+                        <input type="text" id="searchTasks" placeholder="Search by member name" class="search-bar">
+                    </div>
+                    <div class="task-counter">
+                        <label for="taskRange" id="taskLabel">0</label>
+                        <input type="range" id="taskRange" min="0" max="1000" value="0" disabled>
+                        <label for="taskRange" id="taskCounter">Tasks 0</label>
+                    </div>
+                    <table id="tasksTable">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Member</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                                <th>Due Date</th>
+                                <th>Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Task rows will be dynamically inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="tasks-container">
+                <div class="done-task-card">
+                    <div class="done-tasks-header-container">
+                        <h2>Tasks History</h2>
+                        <input type="text" id="done-searchTasks" placeholder="Search by task name" class="search-bar">
+                    </div>
+                    <div class="done-task-counter">
+                        <label for="done-taskRange" id="done-taskLabel">0</label>
+                        <input type="range" id="done-taskRange" min="0" max="1000" value="0" disabled>
+                        <label for="done-taskRange" id="done-taskCounter">Tasks 0</label>
+                    </div>
+                    <table id="done-tasksTable">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Member</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                                <th>Due Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Done task rows will be dynamically inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../scripts/viewProject.js"></script>
+</body>
+
+</html>

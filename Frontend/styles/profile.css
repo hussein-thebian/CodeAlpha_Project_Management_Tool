@@ -1,0 +1,324 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #76abfa;
+    display: flex;
+    justify-content: flex-start; /* Align to the left */
+    align-items: flex-start;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    overflow-x: auto;
+}
+
+.profile-container {
+    width: 500px; /* Adjust the max-width as needed */
+    margin: 20px; /* Add some margin for spacing from the edges */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.profile-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 20px;
+}
+
+.profile-photo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.profile-photo-container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 80%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    display: block;
+    width: 80%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.projects-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Adjust the width as needed */
+    overflow-y: scroll; /* Allow vertical scrolling */
+    height: 200px; /* Adjust height as needed */
+    margin: 20px 10px;
+    position: relative; /* Required for positioning the plus icon */
+}
+
+.projects-card h2 {
+    margin: 0;
+    font-size: 24px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.add-project-btn {
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #007bff;
+}
+
+.add-project-btn:hover {
+    color: #0056b3;
+}
+
+.projects-list {
+    margin-top: 20px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.project-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-item:last-child {
+    border-bottom: none;
+}
+
+.no-projects-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Takes up the full height of the container */
+    color: #888;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 50px;
+    text-align: center;
+}
+
+#projectsList {
+    list-style-type: disc; /* Default bullet point style */
+    margin-top: 20px; /* Adds a small margin to the top of the list */
+    padding-left: 20px; /* Indents the list from the left */
+}
+
+
+#workList {
+    list-style-type: disc;
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+/* Existing styles for list items */
+#projectsList li,
+#workList li {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Hover effect for list items */
+#projectsList li:hover,
+#workList li:hover {
+    cursor: pointer; /* Changes the cursor to a pointer */
+    color: #007bff; /* Changes the text color to blue */
+    text-decoration: underline; /* Underlines the text */
+}
+
+/* Increase the size and change the color of the bullet point */
+#projectsList li::marker,
+#workList li::marker {
+    font-size: 24px;
+    color: #333;
+}
+
+.work-and-projects-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    max-width: 400px; /* Adjust the max-width as needed */
+    gap: 30px;
+}
+
+.tasks-container {
+    background: #fff;
+    padding: 5px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 900px; /* Adjust the width as needed */
+    margin: 20px;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    height: 540px; /* Adjust height as needed */
+}
+
+.tasks-header-container {
+    display: flex;
+    align-items: center; /* Align items vertically centered */
+    gap: 190px; /* Space between the heading and the search bar */
+}
+
+.tasks-header-container h2 {    
+    font-size: 32px; /* Adjust font size if needed */
+}
+
+.search-bar {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+.task-counter {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+#taskRange {
+    -webkit-appearance: none; 
+    width: 60%; /* Adjust width as needed */
+    height: 15px; /* Increase height */
+    background: #ddd; /* Background color of the track */
+    border-radius: 5px; /* Rounded corners */
+    outline: none;
+}
+
+#taskRange::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 25px; /* Increase thumb size */
+    height: 25px;
+    background: #007bff; /* Thumb color */
+    border-radius: 50%;
+}
+
+#taskRange::-moz-range-thumb {
+    width: 25px; /* Increase thumb size */
+    height: 25px;
+    background: #007bff; /* Thumb color */
+    border-radius: 50%;
+}
+
+.task-counter label {
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+#tasksTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#tasksTable th, #tasksTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#tasksTable th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+#tasksTable td {
+    font-size: 16px;
+}
+
+#tasksTable td:last-child {
+    text-align: center;
+}
+
+.pen-icon-btn {
+    background: none;
+    border: none;
+    color: #007bff;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.pen-icon-btn:hover {
+    color: #0056b3;
+}
+
+.no-tasks-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Adjust height as needed */
+    color: #888;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 30px;
+    text-align: center;
+}   
+
+
+.logout-button {
+    position: absolute;
+    top: 10px; /* Adjust distance from top */
+    left: 10px; /* Adjust distance from left */
+    background-color: #007bff; /* Blue theme */
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 24px; /* Adjust size */
+    width: 50px; /* Adjust size */
+    height: 50px; /* Adjust size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

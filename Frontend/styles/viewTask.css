@@ -1,0 +1,201 @@
+body {
+    background-image: url('../assets/project.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+}
+
+
+.card {
+    background: #fff;
+    padding: 10px 20px; /* Increased padding for a larger card */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow for emphasis */
+    width: 500px;
+    height: 400px;
+    max-width: 500px; /* Increased max-width for bigger cards */
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+ .form-group {
+    margin-bottom: 20px; /* Increased space between form groups */
+}
+
+ .form-group label,#dueDateDisplay   {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 24px;
+}
+
+.form-group input,
+.form-group textarea,
+ .form-group select {
+    width: calc(100% - 16px); /* Full width minus padding */
+    padding: 12px; /* Increased padding for larger inputs */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px; /* Larger font size for better readability */
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+.card .form-group input[type="text"],
+.card .form-group textarea {
+    width: calc(100% - 16px); /* Full width minus padding */
+    padding: 12px; /* Increased padding for larger inputs */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px; /* Larger font size for better readability */
+}
+
+.card button {
+    padding: 12px 20px; /* Increased padding for a larger button */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px; /* Larger font size for better readability */
+    margin-top: 10px;
+}
+
+.card button:hover {
+    background-color: #0056b3;
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #007bff; /* Blue theme */
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 24px; /* Bigger icon */
+    width: 50px; /* Adjust size */
+    height: 50px; /* Adjust size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; /* Ensure cursor is pointer */
+    z-index: 1000; /* Ensure it's on top of other elements */
+}
+
+.back-button:hover {
+    background-color: #14304d; /* Darker blue on hover */
+}
+
+
+
+
+.no-comments {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #c41bde;
+    margin: 20px 0;
+}
+
+.add-comment-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.no-comments {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #c41bde;
+    margin: 20px 0;
+}
+
+.comment-item {
+    display: flex;
+    align-items: flex-start; /* Align items at the top */
+    margin-bottom: 10px;
+    border-bottom: 1px solid #c41bde;
+    padding: 10px;
+    font-size: 19px;
+    box-sizing: border-box;
+}
+
+.comment-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.comment-username {
+    font-size: 20px; /* Increased font size for username */
+    font-weight: bold;
+    display: block; /* Make username take a new line */
+}
+
+.comment-text {
+    font-size: 22px; /* Increased font size for comment text */
+}
+
+.comment-item p {
+    margin: 0; /* Remove default margin to fit content */
+    padding: 0; /* Remove default padding */
+}
+
+.add-comment-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+#commentInput {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-size: 18px; /* Adjust font size to match input style */
+}
+
+#addCommentButton {
+    padding: 10px 20px;
+    background-color: #3159b0;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px; /* Adjust font size to match button style */
+}
+
+#addCommentButton:hover {
+    background-color: #242094;
+}
+
+.scrollable-list {
+    overflow-y: scroll; /* Changed to auto to avoid unwanted scrollbars */
+    height: 200px; /* Adjust based on card height */
+}
+
+.delete-comment-button {
+    background: none; /* Remove the background */
+    border: none; /* Remove the border */
+    color: #dc3545; /* Set the color to a standard red */
+    font-size: 20px; /* Set the font size for the icon */
+    cursor: pointer; /* Set the cursor to pointer */
+    padding: 0; /* Remove padding */
+    margin-left: 10px; /* Add a small margin for spacing */
+}
+
+.delete-comment-button:hover {
+    color: #a71d2a; /* Darker red on hover */
+}
